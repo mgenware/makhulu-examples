@@ -10,6 +10,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "start": "tsc",
     "clean": "rimraf dist && rimraf dist_tests"
   },
   "engines": {
@@ -29,7 +30,7 @@
     "typescript": "^3.1.6"
   },
   "dependencies": {
-    "makhulu": "^0.1.1",
+    "makhulu": "^0.2.0",
     "uglify-js": "^3.4.9"
   }
 }
