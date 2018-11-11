@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/uglify-js-files",
+    "outDir": "../../dist/uglifyjs-and-merge",
     "rootDir": ".",
     "composite": true
   },
