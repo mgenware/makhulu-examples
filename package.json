@@ -1,0 +1,35 @@
+{
+  "name": "makhulu-examples",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A bunch of examples for makhulu task runner",
+  "author": "Mgen (https://www.mgenware.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgenware/makhulu-examples.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist && rimraf dist_tests"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.5",
+    "@types/uglify-js": "^3.0.4",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "makhulu": "^0.1.1",
+    "uglify-js": "^3.4.9"
+  }
+}
