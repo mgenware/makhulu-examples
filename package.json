@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "got": "^9.3.2",
-    "makhulu": "^0.3.1",
+    "makhulu": "^0.3.2",
     "uglify-js": "^3.4.9"
   }
 }

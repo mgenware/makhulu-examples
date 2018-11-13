@@ -2379,10 +2379,10 @@ makeerror@1.0.x:
   dependencies:
     tmpl "1.0.x"
 
-makhulu@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/makhulu/-/makhulu-0.3.1.tgz#b292f51c72b3cfc43357a4a174eaecd002d89e06"
-  integrity sha512-t1mArx8eKsVOr+NzF44iH09rkhOiFHyOf156wxKDMKgyrdmzhyvHyJFLS/IPLp+ASB9mvEJgofiVqxWjKDeUPw==
+makhulu@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/makhulu/-/makhulu-0.3.2.tgz#823590da8d15f052834fba13533142ac7b1ab236"
+  integrity sha512-gvQZnrFlAOssabxETlWPX5dsOxmzmdrjTaETWuHOY2ue5pqX0gN0O859jJ8hyhgDBLEW47ZW/YMvmFfyrCNQCw==
   dependencies:
     fast-glob "^2.2.3"
     make-dir "^1.3.0"
