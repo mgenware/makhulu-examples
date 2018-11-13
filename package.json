@@ -21,6 +21,7 @@
     "trailingComma": "all"
   },
   "devDependencies": {
+    "@types/got": "^9.2.0",
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.5",
     "@types/uglify-js": "^3.0.4",
@@ -30,7 +31,7 @@
     "typescript": "^3.1.6"
   },
   "dependencies": {
-    "ky": "^0.5.1",
+    "got": "^9.3.2",
     "makhulu": "^0.3.1",
     "uglify-js": "^3.4.9"
   }

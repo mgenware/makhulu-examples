@@ -3,10 +3,8 @@
  * makhulu, ky
  */
 import * as mk from 'makhulu';
-import * as ky from 'ky';
-
+import * as got from 'got';
 const URL = 'url';
-const CONTENT = 'content';
 
 (async () => {
   const urls = [
@@ -18,8 +16,11 @@ const CONTENT = 'content';
   const list = new mk.DataList(urls.map(u => mk.DataObject.fromEntries([
     [URL, u],
   ])));
-  await list.map('download', async d => {
-    const content = await ky.default.get(d.get(URL) as string).text();
-    return d.set(CONTENT, content);
+  await list.map('Downloading', async d => {
+    const url = d.get(URL) as string;
+    const resp = await got(url);
+    return d.set(mk.fs.RelativeFile, `${url}.html`)
+      .set(mk.fs.FileContent, resp.body);
   });
+  await list.map('Saving to files', mk.fs.saveToDirectory('./dist_files/download-urls-to-files'));
 })();
