@@ -30,7 +30,8 @@
     "typescript": "^3.1.6"
   },
   "dependencies": {
-    "makhulu": "^0.2.2",
+    "ky": "^0.5.1",
+    "makhulu": "^0.3.1",
     "uglify-js": "^3.4.9"
   }
 }
