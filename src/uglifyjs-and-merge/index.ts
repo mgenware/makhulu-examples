@@ -4,6 +4,7 @@
  */
 import * as mk from 'makhulu';
 import { minify } from 'uglify-js';
+import * as nodepath from 'path';
 
 (async () => {
   const srcDir = './test_files/';
@@ -28,7 +29,7 @@ import { minify } from 'uglify-js';
   await files.forEach('Source files', mk.fs.printsRelativeFile);
 
   // Read file content, and now data list also contains file content data
-  await files.map('Read files', mk.fs.fileToContentString);
+  await files.map('Read files', mk.fs.readToString);
   /**
    * Now the data list is like (note that this only adds attributes to the target data map, all previous attributes are preserved):
    * [
@@ -101,7 +102,7 @@ import { minify } from 'uglify-js';
    */
 
   // Call saveToDirectory to save all files to a directory, in this case, only one file called `merged.js` which we created
-  await files.map('Write files', mk.fs.saveToDirectory('./dist_files/uglifyjs-and-merge'));
+  await files.map('Write files', mk.fs.writeToDirectory(`./dist_files/${nodepath.basename(__dirname)}`));
   await files.forEach('Dest files', mk.fs.printsDestFile);
   /**
    * Now the data list is like:

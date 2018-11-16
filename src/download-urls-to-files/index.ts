@@ -4,6 +4,7 @@
  */
 import * as mk from 'makhulu';
 import * as got from 'got';
+import * as nodepath from 'path';
 const URL = 'url';
 
 (async () => {
@@ -22,5 +23,5 @@ const URL = 'url';
     return d.set(mk.fs.RelativeFile, `${url}.html`)
       .set(mk.fs.FileContent, resp.body);
   });
-  await list.map('Saving to files', mk.fs.saveToDirectory('./dist_files/download-urls-to-files'));
+  await list.map('Saving to files', mk.fs.writeToDirectory(`./dist_files/${nodepath.basename(__dirname)}`));
 })();
