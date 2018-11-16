@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@types/got": "^9.2.0",
+    "@types/html-minifier": "^3.5.2",
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.5",
     "@types/uglify-js": "^3.0.4",
@@ -33,7 +34,8 @@
   },
   "dependencies": {
     "got": "^9.3.2",
-    "makhulu": "^0.3.2",
+    "html-minifier": "^3.5.21",
+    "makhulu": "^0.4.1",
     "uglify-js": "^3.4.9"
   }
 }
