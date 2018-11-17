@@ -1,7 +1,3 @@
-/**
- * Assuming you have installed the following packages:
- * makhulu, ky
- */
 import * as mk from 'makhulu';
 import * as got from 'got';
 import * as nodepath from 'path';

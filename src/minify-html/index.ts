@@ -1,8 +1,3 @@
-/**
-
-* Assuming you have installed the following packages:
- * makhulu, ky
- */
 import { minify } from 'html-minifier';
 import * as mk from 'makhulu';
 import * as nodepath from 'path';
