@@ -49,12 +49,13 @@ import * as nodepath from 'path';
 
   // You can modify the content to whatever you want, e.g. uglify the content
   await files.map('Uglify', async data => {
-    const content = data.get(mk.fs.FileContent) as string;
+    const content = data[mk.fs.FileContent] as string;
     const uglifyRes = minify(content);
     if (uglifyRes.error) {
       throw uglifyRes.error;
     }
-    return data.set(mk.fs.FileContent, uglifyRes.code);
+    data[mk.fs.FileContent] = uglifyRes.code;
+    return data;
   });
   /**
    * Now the data list is like:
@@ -77,17 +78,17 @@ import * as nodepath from 'path';
   await files.reset('Merge into one file', async dataList => {
     // set merged file as "bundle.js"
     const destPath = 'bundle.js';
-    // merge contents
-    let content = '';
+    // merge contents of all files into a single string
+    let contents = '';
     dataList.forEach(d => {
-      content += d.get(mk.fs.FileContent) as string;
+      contents += d[mk.fs.FileContent] as string;
     });
-    // create new DataObject
-    const bundleFileObject = mk.DataObject.fromEntries([
-      [mk.fs.SrcDir, srcDir],
-      [mk.fs.RelativeFile, destPath],
-      [mk.fs.FileContent, content],
-    ]);
+    // create a new DataObject
+    const bundleFileObject = {
+      [mk.fs.SrcDir]: srcDir,
+      [mk.fs.RelativeFile]: destPath,
+      [mk.fs.FileContent]: contents,
+    };
     return [bundleFileObject];
   });
   /**
@@ -102,7 +103,10 @@ import * as nodepath from 'path';
    */
 
   // Call writeToDirectory to save all files to a directory, in this case, only one file called `merged.js` which we created
-  await files.map('Write files', mk.fs.writeToDirectory(`./dist_files/${nodepath.basename(__dirname)}`));
+  await files.map(
+    'Write files',
+    mk.fs.writeToDirectory(`./dist_files/${nodepath.basename(__dirname)}`),
+  );
   await files.forEach('Dest files', mk.fs.printsDestFile);
   /**
    * Now the data list is like:

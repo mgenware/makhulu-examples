@@ -8,9 +8,13 @@ import * as nodepath from 'path';
   const files = await mk.fs.src(srcDir, '**/*.html');
   await files.map('Read files', mk.fs.readToString);
   await files.map('Minify files', async d => {
-    const content = d.get(mk.fs.FileContent) as string;
+    const content = d[mk.fs.FileContent] as string;
     const res = minify(content, { collapseWhitespace: true });
-    return d.set(mk.fs.FileContent, res);
+    d[mk.fs.FileContent] = res;
+    return d;
   });
-  await files.map('Saving to files', mk.fs.writeToDirectory(`./dist_files/${nodepath.basename(__dirname)}`));
+  await files.map(
+    'Saving to files',
+    mk.fs.writeToDirectory(`./dist_files/${nodepath.basename(__dirname)}`),
+  );
 })();
