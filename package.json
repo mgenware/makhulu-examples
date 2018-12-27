@@ -11,6 +11,7 @@
   "license": "MIT",
   "scripts": {
     "ts": "ts-node",
+    "test": "ts-node src/mk",
     "clean": "rimraf dist && rimraf dist_tests"
   },
   "engines": {
@@ -21,21 +22,21 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "@types/got": "^9.2.0",
+    "@types/got": "^9.2.2",
     "@types/html-minifier": "^3.5.2",
-    "@types/jest": "^23.3.9",
-    "@types/node": "^10.12.10",
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.18",
     "@types/uglify-js": "^3.0.4",
     "jest": "^23.6.0",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
   },
   "dependencies": {
-    "got": "^9.3.2",
+    "got": "^9.5.0",
     "html-minifier": "^3.5.21",
-    "makhulu": "^1.0.0",
+    "makhulu": "^1.1.0",
     "uglify-js": "^3.4.9"
   }
 }
