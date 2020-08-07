@@ -1,3 +1,13 @@
-## Run this example
+To run this example:
 
-* `yarn ts src/minify-html`
+Install dependencies at the root folder:
+
+```sh
+yarn
+```
+
+Go to this folder:
+
+```sh
+ts-node main.ts
+```

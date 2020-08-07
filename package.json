@@ -11,28 +11,27 @@
   "license": "MIT",
   "scripts": {
     "ts": "ts-node",
-    "test": "ts-node src/mk",
     "clean": "rimraf dist && rimraf dist_tests"
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "devDependencies": {
-    "@types/got": "^9.6.1",
-    "@types/html-minifier": "^3.5.3",
-    "@types/jest": "^24.0.15",
-    "@types/node": "^12.6.3",
-    "@types/uglify-js": "^3.0.4",
-    "jest": "^24.8.0",
-    "rimraf": "^2.6.3",
-    "ts-node": "^8.3.0",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.3"
+    "@types/got": "^9.6.11",
+    "@types/html-minifier": "^4.0.0",
+    "@types/node": "^14.0.27",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-typescript-lite": "^9.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
-    "got": "^9.6.0",
+    "got": "^11.5.2",
     "html-minifier": "^4.0.0",
-    "makhulu": "^1.2.0",
-    "uglify-js": "^3.6.0"
+    "makhulu": "^1.3.1",
+    "terser": "^5.0.0"
   }
 }
